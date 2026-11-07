@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ja" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080b14">
+  <meta name="description" content="毎日のことも、小さなひらめきも。余白は、あなたの端末に保存するシンプルなメモアプリです。">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="余白">
+  <title>余白 — あなたの思考に、自由な余白を。</title>
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./assets/icon-180.png">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-note" viewBox="0 0 24 24"><rect x="5" y="3" width="15" height="18" rx="2"/><path d="M9 3v18M12 8h5M12 12h5M12 16h3M3 7h3M3 12h3M3 17h3"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="m15 3 6 6-4 1-4 5-1 4-7-7 4-1 5-4 1-4ZM5 19l3-3"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7M14 10v7"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><path d="m10 3-.6 2.3-2 .9-2.2-.7-2 3.5 1.6 1.7v2.6L3.2 15l2 3.5 2.2-.7 2 .9.6 2.3h4l.6-2.3 2-.9 2.2.7 2-3.5-1.6-1.7v-2.6L20.8 9l-2-3.5-2.2.7-2-.9L14 3Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 5h12M9 12h12M9 19h12M3 5h1M3 12h1M3 19h1"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 15V3m-4 4 4-4 4 4M6 10H4v11h16V10h-2"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4m-4 4 4-4 4 4M4 16v5h16v-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5m5-5-5 5 5 5"/></symbol>
+    <symbol id="i-restore" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 1 8M4 4v6h6M12 8v5l3 2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1 1M18 18l1 1M5 19l1-1M18 6l1-1"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.6 6.4L21 12l-6.4 2.6L12 21l-2.6-6.4L3 12l6.4-2.6L12 3ZM20 2v4M18 4h4"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h5l3 3h6a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/></symbol>
+  </defs></svg>
+  <a class="skip-link" href="#main">メモへ移動</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="メインナビゲーション">
+      <a class="brand" href="./" aria-label="余白 ホーム"><span class="brand-mark"><svg class="icon"><use href="#i-note"/></svg></span><span class="brand-name">余白<span>YOHAKU / NOTES</span></span></a>
+      <button class="button primary desktop-create" data-action="new"><svg class="icon"><use href="#i-plus"/></svg>新しいメモ</button>
+      <p class="nav-caption">WORKSPACE</p>
+      <nav class="navigation">
+        <button class="nav-item active" data-filter="all"><svg class="icon"><use href="#i-note"/></svg><span>すべてのメモ</span><span class="nav-count" id="count-all">0</span></button>
+        <button class="nav-item" data-filter="pinned"><svg class="icon"><use href="#i-pin"/></svg><span>ピン留め</span><span class="nav-count" id="count-pinned">0</span></button>
+        <button class="nav-item" data-filter="trash"><svg class="icon"><use href="#i-trash"/></svg><span>ごみ箱</span><span class="nav-count" id="count-trash">0</span></button>
+      </nav>
+      <div class="sidebar-collections"><p class="nav-caption">COLLECTIONS</p><button class="nav-item" data-collection="blue"><span class="collection-dot blue"></span><span>ブルー</span><span class="nav-count" data-count-color="blue">0</span></button><button class="nav-item" data-collection="sand"><span class="collection-dot sand"></span><span>パープル</span><span class="nav-count" data-count-color="sand">0</span></button><button class="nav-item" data-collection="rose"><span class="collection-dot rose"></span><span>ローズ</span><span class="nav-count" data-count-color="rose">0</span></button><button class="nav-item" data-collection="sage"><span class="collection-dot sage"></span><span>ミント</span><span class="nav-count" data-count-color="sage">0</span></button></div>
+      <div class="sidebar-bottom">
+        <div class="local-note"><svg class="icon"><use href="#i-shield"/></svg><div>プライベートな空間<span><span class="status-dot"></span>この端末に保存</span></div></div>
+        <button class="nav-item" data-action="settings"><svg class="icon"><use href="#i-settings"/></svg><span>設定とバックアップ</span></button>
+        <p class="sidebar-signoff">A SPACE FOR YOUR MIND.</p>
+      </div>
+    </aside>
+    <main id="main" class="main" tabindex="-1">
+      <header class="mobile-header"><a class="mobile-brand" href="./"><span class="brand-mark"><svg class="icon"><use href="#i-note"/></svg></span>余白<span>YOHAKU</span></a><button class="icon-button" data-action="settings" aria-label="設定を開く"><svg class="icon"><use href="#i-settings"/></svg></button></header>
+      <div class="page-top"><p class="eyebrow"><span class="workspace-dot"></span>PERSONAL WORKSPACE <span class="top-divider">/</span> <span id="today"></span></p><span class="quiet-label"><span class="status-dot"></span><span id="connection-label">この端末に保存</span></span></div>
+      <div class="page-heading"><div><h1 id="page-title">すべてのメモ<span class="heading-dot">.</span></h1><p id="page-description">あなたの思考に、自由な余白を。</p></div><span class="page-count" id="page-count">0 NOTES</span></div>
+      <section class="overview" aria-label="ワークスペースの概要"><div class="overview-intro"><span class="overview-icon"><svg class="icon"><use href="#i-spark"/></svg></span><div><p class="eyebrow">CAPTURE YOUR INSPIRATION</p><h2>ひらめきを、逃さない。</h2><p>小さなアイデアも、今日の記録も。</p></div></div><div class="overview-stats"><div><span class="stat-label">メモ</span><strong id="stat-notes">00</strong></div><div><span class="stat-label">ピン留め</span><strong id="stat-pinned">00</strong></div><div><span class="stat-label">書いた文字</span><strong id="stat-characters">0<span>文字</span></strong></div></div><span class="overview-orbit" aria-hidden="true"></span></section>
+      <div id="storage-warning" class="notice error" role="alert" hidden></div>
+      <div id="update-banner" class="notice" hidden><span>新しいバージョンが使えます。</span><button class="text-button" id="update-button">更新する</button></div>
+      <div class="toolbar">
+        <label class="search-box"><svg class="icon"><use href="#i-search"/></svg><input type="search" id="search" placeholder="思考のかけらを検索…" autocomplete="off" aria-label="メモを検索"><span class="search-shortcut">⌘ K</span></label>
+        <div class="toolbar-actions"><label class="sort-label"><span class="sr-only">並び順</span><select id="sort"><option value="updated">更新順</option><option value="created">作成順</option><option value="title">タイトル順</option></select></label><div class="view-toggle"><button class="icon-button selected" id="view-grid" aria-label="カード表示" aria-pressed="true"><svg class="icon"><use href="#i-grid"/></svg></button><button class="icon-button" id="view-list" aria-label="リスト表示" aria-pressed="false"><svg class="icon"><use href="#i-list"/></svg></button></div></div>
+      </div>
+      <div class="collection-filters" aria-label="色で絞り込む"><button class="collection-chip active" data-collection="all" aria-pressed="true">すべて</button><button class="collection-chip" data-collection="blue" aria-pressed="false"><span class="collection-dot blue"></span>ブルー</button><button class="collection-chip" data-collection="sand" aria-pressed="false"><span class="collection-dot sand"></span>パープル</button><button class="collection-chip" data-collection="rose" aria-pressed="false"><span class="collection-dot rose"></span>ローズ</button><button class="collection-chip" data-collection="sage" aria-pressed="false"><span class="collection-dot sage"></span>ミント</button><button class="collection-chip" data-collection="plain" aria-pressed="false"><span class="collection-dot plain"></span>グラファイト</button></div>
+      <div class="section-label"><span id="section-label">YOUR NOTES</span><span id="result-count">日々のかけらを、この場所に。</span></div>
+      <div id="notes" class="notes-grid" aria-label="メモ一覧"></div>
+      <section class="empty-state" id="empty-state">
+        <div class="empty-art" aria-hidden="true"><div class="art-orbit"></div><div class="art-sheet back"></div><div class="art-sheet front"><svg class="icon"><use href="#i-note"/></svg><span></span><span></span><span></span></div><span class="art-spark"><svg class="icon"><use href="#i-spark"/></svg></span></div>
+        <p class="eyebrow" id="empty-eyebrow">YOUR NEXT IDEA STARTS HERE</p><h2 id="empty-title">まだないアイデアの、居場所。</h2><p id="empty-description">浮かんだ言葉を、そのままに。<br>あなただけの余白を、ここから。</p><button class="button primary" data-action="new" id="empty-create"><svg class="icon"><use href="#i-plus"/></svg>はじめてのメモを書く</button>
+      </section>
+      <footer class="page-footer"><span class="footer-brand">YOHAKU <span>—</span> A SPACE FOR YOUR MIND.</span><span class="footer-storage"><svg class="icon"><use href="#i-shield"/></svg>この端末に保存<button class="text-button" data-action="settings">バックアップ<svg class="icon"><use href="#i-arrow"/></svg></button></span></footer>
+    </main>
+  </div>
+  <button class="button primary floating-create" data-action="new"><svg class="icon"><use href="#i-plus"/></svg>メモを書く</button>
+  <nav class="bottom-nav" aria-label="モバイルナビゲーション"><button class="active" data-filter="all"><svg class="icon"><use href="#i-note"/></svg><span>メモ</span></button><button data-filter="pinned"><svg class="icon"><use href="#i-pin"/></svg><span>ピン留め</span></button><button data-filter="trash"><svg class="icon"><use href="#i-trash"/></svg><span>ごみ箱</span></button><button data-action="settings"><svg class="icon"><use href="#i-settings"/></svg><span>設定</span></button></nav>
+  <dialog id="editor" class="editor-dialog" aria-label="メモの編集">
+    <div class="editor-top"><button id="editor-back" class="text-button"><svg class="icon"><use href="#i-back"/></svg>メモ</button><span id="save-status" class="save-status" role="status"></span><button id="editor-done" class="button small primary">完了</button></div>
+    <div class="editor-meta"><span id="editor-date"></span><button id="editor-pin" class="icon-button" aria-label="ピン留め" aria-pressed="false"><svg class="icon"><use href="#i-pin"/></svg></button></div>
+    <div class="editor-writing"><label class="sr-only" for="note-title">タイトル</label><input id="note-title" class="note-title-input" placeholder="タイトル" maxlength="1000" autocomplete="off"><label class="sr-only" for="note-body">本文</label><textarea id="note-body" placeholder="ここから、書いてみよう。" spellcheck="false"></textarea></div>
+    <div class="editor-bottom"><fieldset class="color-picker"><legend class="sr-only">メモの色</legend><button type="button" class="color-dot plain" data-color="plain" aria-label="グラファイト" aria-pressed="true"></button><button type="button" class="color-dot sage" data-color="sage" aria-label="ミント" aria-pressed="false"></button><button type="button" class="color-dot sand" data-color="sand" aria-label="パープル" aria-pressed="false"></button><button type="button" class="color-dot rose" data-color="rose" aria-label="ローズ" aria-pressed="false"></button><button type="button" class="color-dot blue" data-color="blue" aria-label="ブルー" aria-pressed="false"></button></fieldset><span id="character-count">0文字</span><button class="icon-button" id="share-note" aria-label="メモを共有または書き出す"><svg class="icon"><use href="#i-share"/></svg></button><button class="icon-button danger-text" id="trash-note" aria-label="ごみ箱へ移動"><svg class="icon"><use href="#i-trash"/></svg></button><button class="text-button" id="restore-note" hidden>元に戻す</button><button class="icon-button danger-text" id="delete-note" aria-label="完全に削除" hidden><svg class="icon"><use href="#i-trash"/></svg></button></div>
+  </dialog>
+  <dialog id="settings" class="settings-dialog" aria-labelledby="settings-title"><div class="dialog-header"><div><p class="eyebrow">MAKE YOURSELF AT HOME</p><h2 id="settings-title">設定とバックアップ</h2></div><button class="icon-button" id="close-settings" aria-label="設定を閉じる"><svg class="icon"><use href="#i-close"/></svg></button></div><div class="settings-content"><section><h3>表示</h3><label class="setting-row" for="theme"><span><svg class="icon"><use href="#i-sun"/></svg>カラーテーマ</span><select id="theme"><option value="system">端末に合わせる</option><option value="light">ライト</option><option value="dark">ダーク</option></select></label></section><section><h3>大切なメモを、手元に。</h3><p>メモはこの端末のブラウザに保存されます。機種変更やブラウザのデータ削除に備えて、定期的にバックアップしてください。</p><button class="setting-action" id="export-backup"><svg class="icon"><use href="#i-download"/></svg><span>バックアップを書き出す<small>すべてのメモをJSONファイルで保存</small></span><svg class="icon"><use href="#i-arrow"/></svg></button><button class="setting-action" id="import-backup"><svg class="icon"><use href="#i-upload"/></svg><span>バックアップを読み込む<small>今あるメモを残して、メモを追加・更新</small></span><svg class="icon"><use href="#i-arrow"/></svg></button><input id="backup-file" type="file" accept="application/json,.json" hidden></section><section class="install-guide"><h3><svg class="icon"><use href="#i-note"/></svg>iPhoneのホーム画面に</h3><p>Safariで開き、共有メニューから<br>「ホーム画面に追加」を選んでください。</p><small>初回の読み込みが完了すると、オフラインでも使えます。端末間の自動同期はありません。</small></section><div class="about"><strong>余白<span>Y O H A K U</span></strong><p>あなたの思考に、自由な余白を。</p><small>VERSION 2.0 · A SPACE FOR YOUR MIND.</small></div></div></dialog>
+  <dialog id="confirm-dialog" class="confirm-dialog" aria-labelledby="confirm-title"><h2 id="confirm-title"></h2><p id="confirm-description"></p><div class="confirm-actions"><button class="button secondary" id="confirm-cancel">キャンセル</button><button class="button primary" id="confirm-ok">実行する</button></div></dialog>
+  <div id="toast" class="toast" role="status" hidden><span id="toast-message"></span><button class="text-button" id="toast-action" hidden>元に戻す</button></div>
+  <noscript><div class="notice error">余白を使うには、ブラウザのJavaScriptを有効にしてください。</div></noscript>
+</body>
+</html>
